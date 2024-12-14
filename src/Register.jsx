@@ -39,10 +39,10 @@ body:JSON.stringify(FormData)
     }
   }
   return (
-    <>
-    <div class='gap-5'><h1 className='flex justify-center'> Register</h1>
+    <> 
+    <div class='gap-5 flex flex-col items-center justify-center min-h-screen px-4  py-8'><h1 className='flex justify-center'> Register</h1>
 
-    <form  className='flex justify-center  gap-6' onSubmit={Submit}>
+    <form  className='w-full  max-w-md space-y-4 bg-white p-6 rounded-r-lg shadow-sm gap-6' onSubmit={Submit}>
     <label class="input input-bordered flex items-center gap-2">
   <input type="text" class="grow" placeholder="fullname" ref={fullname}/>
   <MdDriveFileRenameOutline />
@@ -86,7 +86,7 @@ body:JSON.stringify(FormData)
   </svg><br /><br />
   <input type="password" class="grow"  ref={password} />
 </label>
-<button class="btn btn-active btn-neutral text-center" type='submit'>Register</button></form>
+<button class="w-full btn btn-active btn-neutral mt-4 py-4 font-semibold text-center" type='submit'>Register</button></form>
       </div>
     </>
     
