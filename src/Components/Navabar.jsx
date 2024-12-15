@@ -1,9 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
-  const pages = ['home', 'register', 'login'];
+  const loaction=useLocation
+  const pages = ['home', 'register','login','dashboard',];
 
   return (
     <div className="navbar bg-base-300 px-6 py-4">
@@ -11,15 +12,18 @@ const ResponsiveAppBar = () => {
       <div className="flex-1">
         <a className="text-2xl font-bold text-gray-800">Blogging App</a>
       </div>
+      
 
       {/* Navigation Links */}
       <div className="flex space-x-8">
         {pages.map((page) => (
-          <button
-            key={page}
-            className="btn btn-ghost text-lg capitalize"
-            onClick={() => navigate(`/${page}`)}
-          >
+           <button
+           key={page}
+           className={`btn btn-ghost text-lg capitalize ${
+             location.pathname === `/${page}` ? 'text-blue-600 font-bold' : ''
+           }`}
+           onClick={() => navigate(`/${page}`)}
+         >
             {page}
           </button>
         ))}
